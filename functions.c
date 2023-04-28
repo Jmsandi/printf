@@ -128,17 +128,21 @@ unsigned long int abs_num;
 num = convert_size_number(num, size);
 
 /* handle special case for zero */
-if (num == 0) {
+if (num == 0)
+{
 buffer[i--] = '0';
 }
 
 buffer[BUFF_SIZE - 1] = '\0';
 
 /* handle negative numbers */
-if (num < 0) {
+if (num < 0)
+{
 abs_num = (unsigned long int)(-1 * num);
 is_negative = 1;
-} else {
+}
+else
+{
 abs_num = (unsigned long int)num;
 }
 
