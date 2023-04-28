@@ -147,7 +147,8 @@ abs_num = (unsigned long int)num;
 }
 
 /* convert integer to string and store in buffer */
-while (abs_num > 0) {
+while (abs_num > 0) 
+{
 buffer[i--] = (abs_num % 10) + '0';
 abs_num /= 10;
 }
@@ -184,20 +185,20 @@ int print_binary(va_list types, char buffer[],
     UNUSED(size);
 
     for (i = 0; i < 32; i++)
-        a[i] = (n >> i) & 1;
+       	 a[i] = (n >> i) &1;
 
     for (i = 31; i > 0; i--)
     {
         if (a[i] == 1)
-            break;
+          	  break;
     }
 
     for (; i != (unsigned int)-1; i--)
     {
-        char c = '0' + a[i];
+       	 char c = '0' + a[i];
 
-        write(1, &c, 1);
-        count++;
+      	  write(1, &c, 1);
+        	count++;
     }
 
     return (count);
