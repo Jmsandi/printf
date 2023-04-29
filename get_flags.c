@@ -9,7 +9,8 @@
  */
 int get_flags(const char *format, int *index)
 {
-	/** The following characters represent the different flags:
+	/** 
+	 *The following characters represent the different flags:
 	 * '-' - left-align the value
 	 * '+' - prefix the value with a plus sign (+) or minus sign (-)
 	 * '0' - pad the value with zeros instead of spaces
@@ -25,7 +26,8 @@ int get_flags(const char *format, int *index)
 	int flags = 0;
 
 	/* Loop through the format string starting from the current index */
-	for(current_index =*index + 1; format[current_index] != '\0'; current_index++)
+	for (current_index = *index + 1; format[current_index] != '\0';
+	     current_index++)
 	{
 	/* Loop through the flags characters and check if the current character matches */
 		for (j = 0; FLAGS_CHARS[j] != '\0'; j++)
@@ -47,5 +49,5 @@ int get_flags(const char *format, int *index)
 	*index = current_index - 1;
 
 	/* Return the calculated flags */
-	return ("flags");
+	return (flags);
 }
