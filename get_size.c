@@ -19,7 +19,7 @@ int get_size(const char *format, int *index)
 	else if (format[current_index] == 'h')
 		size = S_SHORT;
 
-	/* If the size modifier was not found, update the index to the current position */
+/* If the size modifier was not found, update the index to the current position */
 	if (size == 0)
 		*index = current_index - 1;
 	/* If the size modifier was found, update the index to the next position */
@@ -27,5 +27,5 @@ int get_size(const char *format, int *index)
 		*index = current_index;
 
 	/* Return the size modifier as an integer */
-	return size;
+	return (size);
 }
