@@ -7,41 +7,34 @@
  *
  * Return: The precision for printing
  */
-int get_precision(const char *format, int *index, va_list list)
+int get_precision(const char *format, int *i, va_list list)
 {
-	int current_index = *index + 1;
+	int curr_i = *i + 1;
 	int precision = -1;
 
-	/* Check if the current character is a period (.) */
-	if (format[current_index] != '.')
-		return precision;
+	if (format[curr_i] != '.')
+		return (precision);
 
 	precision = 0;
 
-	/* Loop through the characters after the period */
-	for (current_index += 1; format[current_index] != '\0'; current_index++)
+	for (curr_i += 1; format[curr_i] != '\0'; curr_i++)
 	{
-		/* If the current character is a digit, update the precision accordingly */
-		if (is_digit(format[current_index]))
+		if (is_digit(format[curr_i]))
 		{
 			precision *= 10;
-			precision += format[current_index] - '0';
+			precision += format[curr_i] - '0';
 		}
-		/* If the current character is an asterisk (*), retrieve the precision from the va_list */
-		else if (format[current_index] == '*')
+		else if (format[curr_i] == '*')
 		{
-			current_index++;
+			curr_i++;
 			precision = va_arg(list, int);
 			break;
 		}
-		/* If the current character is neither a digit nor an asterisk, break out of the loop */
 		else
 			break;
 	}
 
-	/* Update the index to the end of the precision */
-	*index = current_index - 1;
+	*i = curr_i - 1;
 
-	/* Return the calculated precision */
-	return precision;
+	return (precision);
 }
