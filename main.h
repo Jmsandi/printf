@@ -44,12 +44,6 @@ int handle_print(const char *fmt, int *i,
 va_list list, char buffer[], int flags, int width, int precision, int size);
 
 /****************** FUNCTIONS ******************/
-/**
-* FUNCTIONS - Declarations of all the functions used in the printf program
-* This header file declares all the functions used in the _printf program, including
-* functions to print different data types such as chars, strings, and numbers, as well
-* as functions to handle other specifiers and modifiers like width, precision, and size.
-*/
 
 /* Funtions to print chars and strings */
 int print_char(va_list types, char buffer[],
