@@ -9,14 +9,14 @@
  */
 int get_flags(const char *format, int *index)
 {
-	/** 
-	 *The following characters represent the different flags:
-	 * '-' - left-align the value
-	 * '+' - prefix the value with a plus sign (+) or minus sign (-)
-	 * '0' - pad the value with zeros instead of spaces
-	 * '#' - add an alternative form of the value
-	 * ' ' - prefix the value with a space if it's positive
-	 */
+/** 
+*The following characters represent the different flags:
+* '-' - left-align the value
+* '+' - prefix the value with a plus sign (+) or minus sign (-)
+* '0' - pad the value with zeros instead of spaces
+* '#' - add an alternative form of the value
+* ' ' - prefix the value with a space if it's positive
+*/
 	const char FLAGS_CHARS[] = {'-', '+', '0', '#', ' ', '\0'};
 
 	/* Each flag is represented by a corresponding bit in the flags variable */
